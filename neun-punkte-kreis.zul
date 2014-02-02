@@ -1,0 +1,41 @@
+window(-1,1,-1,1);
+/*
+Der Neun-Punkte-Kreis.
+
+
+Dieser lange bekannte Kreis geht durch die Seitenmitten, die Fuápunkte
+der H”hen und die Halbierungspunkte zwischen H”henschnittpunkt
+und Ecken.
+*/
+"Punkt_1"()=point(-0.664557,-0.373418);
+"Punkt_2"()=point(0.056962,0.563291);
+"Punkt_3"()=point(0.636364,-0.272727);
+"Strecke_1"()=segment("Punkt_1","Punkt_2");
+"Strecke_2"()=segment("Punkt_2","Punkt_3");
+"Strecke_3"()=segment("Punkt_3","Punkt_1");
+"Mitte_1"(color:green,symbol:circle)=middle("Punkt_3","Punkt_2");
+"Mitte_2"(color:green,symbol:circle)=middle("Punkt_2","Punkt_1");
+"Mitte_3"(color:green,symbol:circle)=middle("Punkt_1","Punkt_3");
+"Kreis_1"(hidden,color:green)=circle("Mitte_1","Mitte_3");
+"Kreis_2"(hidden,color:green)=circle("Mitte_3","Mitte_1");
+"Schnitt_2"(hidden,color:green),"Schnitt_1"(hidden,color:green)=intersection("Kreis_1","Kreis_2");
+"Gerade_1"(hidden,color:green)=line("Schnitt_2","Schnitt_1");
+"Kreis_3"(hidden,color:green)=circle("Mitte_3","Mitte_2");
+"Kreis_4"(hidden,color:green)=circle("Mitte_2","Mitte_3");
+"Schnitt_4"(hidden,color:green),"Schnitt_3"(hidden,color:green)=intersection("Kreis_3","Kreis_4");
+"Gerade_2"(hidden,color:green)=line("Schnitt_4","Schnitt_3");
+"Schnitt_5"(hidden,color:green,symbol:circle)=intersection("Gerade_1","Gerade_2");
+"Kreis_5"(color:green)=circle("Schnitt_5","Mitte_3");
+"Objekt_24"(hidden,color:cyan),"Gerade_4"(hidden,color:cyan)=rectangular("Punkt_2","Strecke_3");
+"Schnitt_6"(color:cyan,symbol:circle)=intersection("Strecke_3","Gerade_4");
+"Strecke_4"(color:cyan)=segment("Punkt_2","Schnitt_6");
+"Objekt_28"(hidden,color:cyan),"Gerade_5"(hidden,color:cyan)=rectangular("Punkt_1","Strecke_2");
+"Schnitt_7"(color:cyan,symbol:circle)=intersection("Strecke_2","Gerade_5");
+"Strecke_5"(color:cyan)=segment("Punkt_1","Schnitt_7");
+"Objekt_32"(hidden,color:cyan),"Gerade_6"(hidden,color:cyan)=rectangular("Punkt_3","Strecke_1");
+"Schnitt_8"(color:cyan,symbol:circle)=intersection("Strecke_1","Gerade_6");
+"Strecke_6"(color:cyan)=segment("Punkt_3","Schnitt_8");
+"Schnitt_9"(hidden,color:cyan)=intersection("Strecke_5","Strecke_4");
+"Mitte_4"(color:brown,symbol:circle)=middle("Schnitt_9","Punkt_1");
+"Mitte_5"(color:brown,symbol:circle)=middle("Schnitt_9","Punkt_2");
+"Mitte_6"(color:brown,symbol:circle)=middle("Schnitt_9","Punkt_3");

@@ -1,0 +1,21 @@
+N:Parallel line
+P:Line_1
+L:Choose a line object!
+T:line
+P:Point_1
+L:Choose a point!
+T:point
+S:"ObjPoint_5"(hidden)=pointon("Line_1",0.545055,0.0337055);
+S:"Circle_14"(hidden)=circle("Point_1","ObjPoint_5");
+S:"Cut_21"(hidden),"Cut_20"(hidden)=intersection("Circle_14","Line_1");
+S:"Circle_15"(hidden)=circle("Cut_21","Point_1");
+S:"Circle_16"(hidden)=circle("Cut_20","Point_1");
+S:"Cut_23"(hidden),"Cut_22"(hidden)=intersection("Circle_15","Circle_16");
+S:"Line_6"(hidden)=line("Cut_22","Cut_23");
+S:"Cut_24"(hidden)=intersection("Line_1","Line_6");
+S:"Circle_17"(hidden)=circle("Point_1","Cut_24");
+S:"Cut_26"(hidden),"Cut_25"(hidden)=intersection("Circle_17","Line_6");
+S:"Circle_18"(hidden)=circle("Cut_25","Cut_26");
+S:"Circle_19"(hidden)=circle("Cut_26","Cut_25");
+S:"Cut_28"(hidden),"Cut_27"(hidden)=intersection("Circle_19","Circle_18");
+S:"Line_7"()=line("Cut_28","Cut_27");

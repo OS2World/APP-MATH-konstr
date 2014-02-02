@@ -1,0 +1,21 @@
+window(-1,1,-1,1);
+/*
+Spiegeln eines Punktes am Kreis mit dem Zirkel allein.
+
+
+Wenn der Kreis den Radius 1 hat ist der Abstand PM das Reziproke
+von P'M. Dies folgt wieder mit einer Žhnlichkeit.
+
+
+Die Konstruktion funktioniert auch, wenn aus dem Kreis heraus
+gespiegelt wird. Allerdings versagt sie, wenn P zu nahe an M liegt.
+*/
+"M"(showname)=point(-0.544304,0.0506329);
+"Punkt_2"()=point(-0.544304,0.474684);
+"Kreis_1"()=circle("M","Punkt_2");
+"P"(showname)=point(0.259494,0.0506329);
+"Kreis_2"(color:green)=circle("P","M");
+"Schnitt_2"(hidden,color:green),"Schnitt_1"(hidden,color:green)=intersection("Kreis_1","Kreis_2");
+"Kreis_3"(color:green)=circle("Schnitt_1","M");
+"Kreis_4"(color:green)=circle("Schnitt_2","M");
+"Schnitt_4"(hidden),"P'"(showname,symbol:circle)=intersection("Kreis_3","Kreis_4");

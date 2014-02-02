@@ -1,0 +1,38 @@
+window(-1,1,-1,1);
+/*
+Konstruktion des regelm„áigen 5-Ecks.
+
+
+Die Strecke AB ist (sqrt(5)+1)/2, falls AC gleich 1 ist. Die blauen
+Strecken sind alle so lang wie AB.
+*/
+"A"(showname)=point(-0.525316,-0.639241);
+"Punkt_2"(symbol:circle)=point(-0.0632911,-0.639241);
+"Gerade_1"(hidden)=line("Punkt_2","A");
+"Kreis_1"(hidden,color:green)=circle("Punkt_2","A");
+"Schnitt_2"(hidden,color:green),"C"(showname)=intersection("Gerade_1","Kreis_1");
+"Objekt_7"(hidden,color:green),"Gerade_2"(hidden,color:green)=rectangular("C","Gerade_1");
+"Kreis_2"(hidden,color:green)=circle("C","Punkt_2");
+"Schnitt_4"(hidden,color:green),"Schnitt_3"(symbol:circle)=intersection("Gerade_2","Kreis_2");
+"Gerade_3"(hidden,color:green)=line("A","Schnitt_3");
+"Kreis_3"(hidden,color:green)=circle("Schnitt_3","C");
+"B"(showname,symbol:circle),"Schnitt_5"(hidden,color:green)=intersection("Gerade_3","Kreis_3");
+"Kreis_6"(hidden,color:cyan)=circle("A","B");
+"Objekt_22"(hidden,color:cyan),"Kreis_7"(hidden,color:cyan)=circle3("C","A","B");
+"Schnitt_10"(hidden,color:cyan),"Schnitt_9"(color:cyan)=intersection("Kreis_6","Kreis_7");
+"Objekt_26"(hidden,color:cyan),"Kreis_8"(hidden,color:cyan)=circle3("Schnitt_9","A","C");
+"Schnitt_12"(color:cyan),"Schnitt_11"(hidden,color:cyan)=intersection("Kreis_6","Kreis_8");
+"Schnitt_14"(hidden,color:cyan),"Schnitt_13"(color:cyan)=intersection("Kreis_7","Kreis_8");
+"Strecke_1"(color:brown)=segment("A","Schnitt_13");
+"Strecke_2"(color:brown)=segment("Schnitt_13","Schnitt_9");
+"Strecke_3"(color:brown)=segment("Schnitt_9","Schnitt_12");
+"Strecke_4"(color:brown)=segment("Schnitt_12","C");
+"Strecke_5"()=segment("A","B");
+"Strecke_6"()=segment("C","Schnitt_3");
+"Strecke_7"(color:brown)=segment("A","C");
+"Strecke_8"(color:blue)=segment("A","Schnitt_9");
+"Strecke_9"(color:blue)=segment("Schnitt_9","C");
+"Strecke_10"(color:blue)=segment("C","Schnitt_13");
+"Strecke_11"(color:blue)=segment("Schnitt_13","Schnitt_12");
+"Strecke_12"(color:blue)=segment("Schnitt_12","A");
+"Winkel_1"(color:blue)=angle("Schnitt_3","C","A");

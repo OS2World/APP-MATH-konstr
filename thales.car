@@ -1,0 +1,18 @@
+window(-1,1,-1,1);
+/*
+The Thales circle.
+
+
+The point Q is constructed so that the angle PQO is always rectangular.
+Move A and watch how the point is bound to the circle.
+*/
+O(showname)=point(-0.610169,-0.19209);
+Q(showname)=point(0.440678,-0.237288);
+Segment_45()=segment(O,Q);
+Point_137(hidden)=middle(Q,O);
+Circle_56(color:cyan)=circle(Point_137,O);
+A(showname)=point(-0.38125,0.58125);
+Ray_4()=ray(Q,A);
+Point_139(hidden),Line_76(hidden)=rectangular(O,Ray_4);
+P(showname)=intersection(Ray_4,Line_76);
+Segment_46()=segment(O,P);

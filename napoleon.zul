@@ -1,0 +1,58 @@
+window(-1,1,-1,1);
+/*
+Konstruiert man auf den Seiten eines Dreiecks regelmÑ·ige Dreiecke,
+so ergeben deren Mittelpunkte ein regelmÑ·iges Dreieck. 
+
+
+Dieser Sachverhalt wird Napoleon zugeschrieben, der ein begeisterter
+Amateurgeometer war.
+
+
+Der Beweis kann mit der folgenden Formel fÅr den Mittelpunkt m
+des gleichseitigen Dreiecks auf ab
+
+
+m=(a+b)/2+i(a-b)/3
+
+
+gefÅhrt werden.
+*/
+"Punkt_1"()=point(-0.487342,-0.139241);
+"Punkt_2"()=point(-0.0949367,0.398734);
+"Punkt_3"()=point(0.462025,-0.0696203);
+"Strecke_1"()=segment("Punkt_1","Punkt_2");
+"Strecke_2"()=segment("Punkt_2","Punkt_3");
+"Strecke_3"()=segment("Punkt_3","Punkt_1");
+"Kreis_5"(hidden,color:green)=circle("Punkt_3","Punkt_2");
+"Kreis_6"(hidden,color:green)=circle("Punkt_2","Punkt_3");
+"Schnitt_8"(color:green),"Schnitt_7"(hidden,color:green)=intersection("Kreis_5","Kreis_6");
+"Strecke_8"(color:green)=segment("Punkt_2","Schnitt_8");
+"Strecke_9"(color:green)=segment("Punkt_3","Schnitt_8");
+"Mitte_5"(hidden,color:green)=middle("Punkt_3","Punkt_2");
+"Mitte_6"(hidden,color:green)=middle("Punkt_2","Schnitt_8");
+"Gerade_5"(hidden,color:green)=line("Punkt_3","Mitte_6");
+"Gerade_6"(hidden,color:green)=line("Mitte_5","Schnitt_8");
+"Schnitt_9"(color:green,symbol:circle)=intersection("Gerade_5","Gerade_6");
+"Kreis_7"(hidden,color:green)=circle("Punkt_2","Punkt_1");
+"Kreis_8"(hidden,color:green)=circle("Punkt_1","Punkt_2");
+"Schnitt_11"(color:green),"Schnitt_10"(hidden,color:green)=intersection("Kreis_7","Kreis_8");
+"Strecke_10"(color:green)=segment("Punkt_1","Schnitt_11");
+"Strecke_11"(color:green)=segment("Punkt_2","Schnitt_11");
+"Mitte_7"(hidden,color:green)=middle("Punkt_2","Punkt_1");
+"Mitte_8"(hidden,color:green)=middle("Punkt_1","Schnitt_11");
+"Gerade_7"(hidden,color:green)=line("Punkt_2","Mitte_8");
+"Gerade_8"(hidden,color:green)=line("Mitte_7","Schnitt_11");
+"Schnitt_12"(color:green,symbol:circle)=intersection("Gerade_7","Gerade_8");
+"Kreis_9"(hidden,color:green)=circle("Punkt_1","Punkt_3");
+"Kreis_10"(hidden,color:green)=circle("Punkt_3","Punkt_1");
+"Schnitt_14"(color:green),"Schnitt_13"(hidden,color:green)=intersection("Kreis_9","Kreis_10");
+"Strecke_12"(color:green)=segment("Punkt_3","Schnitt_14");
+"Strecke_13"(color:green)=segment("Punkt_1","Schnitt_14");
+"Mitte_9"(hidden,color:green)=middle("Punkt_1","Punkt_3");
+"Mitte_10"(hidden,color:green)=middle("Punkt_3","Schnitt_14");
+"Gerade_9"(hidden,color:green)=line("Punkt_1","Mitte_10");
+"Gerade_10"(hidden,color:green)=line("Mitte_9","Schnitt_14");
+"Schnitt_15"(color:green,symbol:circle)=intersection("Gerade_9","Gerade_10");
+"Strecke_14"(color:pink)=segment("Schnitt_15","Schnitt_12");
+"Strecke_15"(color:pink)=segment("Schnitt_12","Schnitt_9");
+"Strecke_16"(color:pink)=segment("Schnitt_9","Schnitt_15");

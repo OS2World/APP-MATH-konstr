@@ -1,0 +1,58 @@
+window(-9.22012,3.72518,-6.47265,6.47265);
+/*
+Konstruktion eines FÅnfecks.
+
+
+Diese Konstruktion erfolgte direkt mit der Formel
+
+	2*sin(pi/5)=sqrt((5-sqrt(5))/2)
+
+unter Verwendung des Hîhensatzes. Die Strecke a hat LÑnge sqrt(5),
+b hat LÑnge (5-sqrt(5))/2 und c ist schlie·lich die gesuchte SeitenlÑnge.
+
+
+Es gibt natÅrlich auch elegantere Konstruktionen.
+*/
+Punkt_1()=point(2,1);
+Punkt_2()=point(3,1);
+Kreis_1()=circle(Punkt_1,Punkt_2);
+Punkt_3(hidden)=point(-0.625,-0.194196);
+Punkt_4(hidden)=point(0.151786,-0.194196);
+Gerade_1()=line(Punkt_3,Punkt_4);
+Punkt_5(color:pink,symbol:circle)=pointon(Gerade_1,-3.43695,-0.194196);
+Punkt_7(hidden,color:green),Kreis_2(hidden,color:green)=circle3(Punkt_5,Punkt_1,Punkt_2);
+Schnitt_1(color:pink,symbol:circle),Schnitt_2(color:pink,symbol:circle)=intersection(Gerade_1,Kreis_2);
+Kreis_4(hidden,color:green)=circle(Schnitt_2,Punkt_5);
+Schnitt_5(hidden,color:green),Schnitt_6(color:pink,symbol:circle)=intersection(Kreis_4,Gerade_1);
+Kreis_6(hidden,color:green)=circle(Schnitt_6,Schnitt_2);
+Schnitt_9(hidden,color:green),Schnitt_10(color:pink,symbol:circle)=intersection(Kreis_6,Gerade_1);
+Kreis_7(hidden,color:green)=circle(Schnitt_1,Schnitt_5);
+Schnitt_11(color:pink,symbol:circle),Schnitt_12(hidden,color:green)=intersection(Kreis_7,Gerade_1);
+Kreis_8(hidden,color:green)=circle(Schnitt_11,Schnitt_1);
+Schnitt_13(color:pink,symbol:circle),Schnitt_14(hidden,color:green)=intersection(Kreis_8,Gerade_1);
+Kreis_9(color:green)=circle(Punkt_5,Schnitt_10);
+Punkt_22(hidden,color:green),Gerade_2(color:green)=rectangular(Schnitt_11,Gerade_1);
+Schnitt_15(color:green),Schnitt_16(color:green)=intersection(Kreis_9,Gerade_2);
+Kreis_10(color:green)=circle(Schnitt_11,Schnitt_16);
+Schnitt_17(hidden,color:green),Schnitt_18(color:green)=intersection(Kreis_10,Gerade_1);
+Punkt_27(color:green)=middle(Schnitt_18,Schnitt_10);
+Kreis_11(color:green)=circle(Schnitt_10,Punkt_27);
+Schnitt_19(color:green),Schnitt_20(color:green)=intersection(Kreis_11,Gerade_1);
+Punkt_30(color:green)=middle(Schnitt_6,Schnitt_20);
+Kreis_12(color:green)=circle(Punkt_30,Schnitt_20);
+Punkt_31(hidden,color:green),Gerade_3(color:green)=rectangular(Schnitt_10,Gerade_1);
+Schnitt_21(color:green),Schnitt_22(color:green)=intersection(Gerade_3,Kreis_12);
+Punkt_34(hidden,color:green),Kreis_13(hidden,color:green)=circle3(Punkt_2,Schnitt_10,Schnitt_22);
+Schnitt_23(hidden,color:green),Schnitt_24(hidden,color:green)=intersection(Kreis_13,Kreis_1);
+Kreis_14(hidden,color:green)=circle(Schnitt_23,Punkt_2);
+Kreis_15(hidden,color:green)=circle(Schnitt_24,Punkt_2);
+Schnitt_31(hidden,color:green),Schnitt_32(hidden,color:green)=intersection(Kreis_15,Kreis_1);
+Schnitt_33(hidden,color:green),Schnitt_34(hidden,color:green)=intersection(Kreis_14,Kreis_1);
+Strecke_1(color:blue)=segment(Schnitt_32,Schnitt_33);
+Strecke_2(color:blue)=segment(Schnitt_33,Schnitt_23);
+Strecke_3(color:blue)=segment(Schnitt_23,Schnitt_34);
+Strecke_4(color:blue)=segment(Schnitt_34,Schnitt_24);
+Strecke_5(color:blue)=segment(Schnitt_24,Schnitt_32);
+a(color:cyan,showname)=segment(Schnitt_11,Schnitt_16);
+c(color:blue,showname)=segment(Schnitt_10,Schnitt_22);
+b(color:brown,showname)=segment(Schnitt_10,Schnitt_19);

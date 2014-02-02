@@ -1,0 +1,26 @@
+window(-1,1,-1,1);
+/*
+Eine Maschine mit zwei Gelenken. Bewegen Sie P!
+*/
+"Punkt_25"()=point(-0.525316,0.0316456);
+"Punkt_26"(symbol:circle)=point(-0.293375,-0.192429);
+"Kreis_3"(hidden)=circle("Punkt_25","Punkt_26");
+"Punkt_27"()=point(0.30597,-0.0820896);
+"P"(showname,symbol:circle)=pointon("Kreis_3",-0.399142,0.328439);
+"Strecke_8"(color:green)=segment("Punkt_25","P");
+"Strahl_2"()=ray("P","Punkt_27");
+"Punkt_29"(symbol:circle)=point(-0.076087,-0.388587);
+"Kreis_4"(hidden)=circle("Punkt_26","Punkt_29");
+"Punkt_30"(hidden),"Kreis_5"(hidden)=circle3("P","Punkt_26","Punkt_29");
+"Schnitt_3"(symbol:circle),"Schnitt_4"(hidden)=intersection("Strahl_2","Kreis_5");
+"Punkt_33"(symbol:circle)=point(0.516304,-0.410326);
+"Kreis_6"(hidden)=circle("Punkt_29","Punkt_33");
+"Punkt_34"()=point(0.119403,0.485075);
+"Strahl_3"()=ray("Schnitt_3","Punkt_34");
+"Punkt_35"(hidden),"Kreis_7"(hidden)=circle3("Schnitt_3","Punkt_29","Punkt_33");
+"Q"(showname,symbol:circle),"Schnitt_6"(hidden)=intersection("Strahl_3","Kreis_7");
+"Strecke_9"(color:green)=segment("Punkt_25","Punkt_26");
+"Strecke_10"(color:pink)=segment("Punkt_26","Punkt_29");
+"Strecke_11"(color:blue)=segment("Punkt_29","Punkt_33");
+"Strecke_34"(color:pink)=segment("P","Schnitt_3");
+"Strecke_35"(color:blue)=segment("Schnitt_3","Q");

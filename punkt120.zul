@@ -1,0 +1,46 @@
+window(-1.76952,1.40568,-1.54604,1.62916);
+/*
+Ein Dreieckspunkt.
+
+
+Der Punkt S wurde so konstruiert, daá die drei angegebenen Winkel
+gleich sind. Dazu muá man Kreise um die Seiten schlagen, deren
+Zentrumswinkel 120 Grad ist.
+*/
+Punkt_1()=point(-0.19685,0.992129);
+Punkt_2()=point(-0.848381,-0.127125);
+Punkt_3()=point(0.590381,-0.375187);
+Strecke_1()=segment(Punkt_2,Punkt_1);
+Strecke_2()=segment(Punkt_1,Punkt_3);
+Strecke_3()=segment(Punkt_3,Punkt_2);
+Kreis_7(hidden,color:green)=circle(Punkt_3,Punkt_1);
+Kreis_8(hidden,color:green)=circle(Punkt_1,Punkt_3);
+Schnitt_8(hidden,color:green),Schnitt_7(hidden,color:green)=intersection(Kreis_7,Kreis_8);
+Gerade_1(hidden,color:green)=line(Schnitt_7,Schnitt_8);
+Kreis_10(hidden,color:green)=circle(Schnitt_8,Punkt_3);
+Schnitt_10(hidden,color:green),Schnitt_9(hidden,color:green)=intersection(Kreis_7,Kreis_10);
+Gerade_2(hidden,color:green)=line(Schnitt_9,Schnitt_10);
+Schnitt_11(color:green)=intersection(Gerade_1,Gerade_2);
+Kreis_11(color:green)=circle(Schnitt_11,Punkt_3);
+Kreis_12(hidden,color:cyan)=circle(Punkt_2,Punkt_3);
+Kreis_13(hidden,color:cyan)=circle(Punkt_3,Punkt_2);
+Schnitt_13(hidden,color:cyan),Schnitt_12(hidden,color:cyan)=intersection(Kreis_13,Kreis_12);
+Gerade_3(hidden,color:cyan)=line(Schnitt_12,Schnitt_13);
+Kreis_14(hidden,color:cyan)=circle(Schnitt_12,Punkt_3);
+Schnitt_15(hidden,color:cyan),Schnitt_14(hidden,color:cyan)=intersection(Kreis_13,Kreis_14);
+Gerade_4(hidden,color:cyan)=line(Schnitt_15,Schnitt_14);
+Schnitt_16(color:cyan)=intersection(Gerade_3,Gerade_4);
+Kreis_15(color:cyan)=circle(Schnitt_16,Punkt_2);
+S(color:blue,showname),Schnitt_17(hidden,color:cyan)=intersection(Kreis_11,Kreis_15);
+Strecke_7(color:blue)=segment(S,Punkt_1);
+Strecke_8(color:blue)=segment(S,Punkt_3);
+Strecke_9(color:blue)=segment(S,Punkt_2);
+Winkel_2(color:blue)=angle(Punkt_3,S,Punkt_1);
+Winkel_3(color:brown)=angle(Punkt_1,S,Punkt_2);
+Winkel_4(color:pink)=angle(Punkt_2,S,Punkt_3);
+Strecke_10(color:cyan)=segment(Punkt_2,Schnitt_16);
+Strecke_11(color:cyan)=segment(Schnitt_16,Punkt_3);
+Winkel_5(color:cyan)=angle(Punkt_3,Schnitt_16,Punkt_2);
+Strecke_12(color:green)=segment(Punkt_1,Schnitt_11);
+Strecke_13(color:green)=segment(Schnitt_11,Punkt_3);
+Winkel_6(color:green)=angle(Punkt_1,Schnitt_11,Punkt_3);

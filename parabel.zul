@@ -1,0 +1,53 @@
+window(-1,1,-1,1);
+/*
+Parabel, Tangente und Brennpunkt.
+
+
+Wenn Sie x bewegen, bewegt sich der Punkt (x,x^2) und die Tangente
+an die Parabel mit. Um zu sehen, daá es sich tats„chlich um die
+Tangente handelt, zeichnen Sie die Ortslinie von (x,x^2).
+
+
+Der Berennpunkt F sammelt tats„chlich die von oben einfallenden
+und an der Parabel reflektierten Lichtstrahlen.
+*/
+"Point_1"(hidden)=point(-0.846914,-0.82716);
+"Point_2"(hidden)=point(0.77284,-0.82716);
+"Line_1"()=line("Point_1","Point_2");
+"x=1"(showname,symbol:cross)=pointon("Line_1",-0.0864198,-0.82716);
+"Object_39"(hidden),"Line_9"()=rectangular("Point_1","Line_1");
+"x"(color:green,showname)=pointon("Line_1",-0.190123,-0.82716);
+"Circle_5"(hidden,color:cyan)=circle("Point_1","x=1");
+"y=1"(showname,symbol:cross),"Cut_10"(hidden,color:cyan)=intersection("Line_9","Circle_5");
+"Circle_6"(hidden,color:cyan)=circle("Point_1","x");
+"Cut_13"(hidden,color:cyan),"Cut_12"(hidden,color:cyan)=intersection("Line_9","Circle_6");
+"Line_10"(hidden,color:cyan)=line("x=1","Cut_13");
+"Object_49"(hidden,color:cyan),"Line_11"(hidden,color:cyan)=parallel("x","Line_10");
+"x^2"(color:green,showname)=intersection("Line_9","Line_11");
+"Object_52"(hidden,color:cyan),"Line_12"(hidden,color:cyan)=rectangular("x","Line_1");
+"Object_54"(hidden,color:cyan),"Line_13"(hidden,color:cyan)=rectangular("x^2","Line_9");
+"(x,x^2)"(color:cyan,showname,symbol:circle)=intersection("Line_12","Line_13");
+"Line_14"(hidden,color:brown)=line("Point_1","(x,x^2)");
+"Object_58"(hidden,color:brown),"Line_15"(hidden,color:brown)=parallel("x=1","Line_14");
+"Cut_16"(hidden,color:brown)=intersection("Line_15","Line_13");
+"Object_61"(hidden,color:brown),"Line_16"(hidden,color:brown)=rectangular("Cut_16","Line_13");
+"Object_63"(hidden,color:brown),"Circle_7"(hidden,color:brown)=circle3("Cut_16","Point_1","x");
+"Cut_18"(hidden,color:brown),"Cut_17"(hidden,color:brown)=intersection("Circle_7","Line_16");
+"Circle_8"(hidden,color:brown)=circle("Cut_17","Cut_16");
+"Cut_20"(hidden,color:brown),"Cut_19"(hidden,color:brown)=intersection("Line_16","Circle_8");
+"Line_17"(color:brown)=line("(x,x^2)","Cut_19");
+"Circle_9"(hidden,color:blue)=circle("(x,x^2)","x");
+"Cut_22"(hidden,color:blue),"Cut_21"(hidden,color:blue)=intersection("Line_12","Circle_9");
+"Ray_1"(color:blue)=ray("(x,x^2)","Cut_22");
+"Object_75"(hidden,color:blue),"Line_18"(hidden,color:blue)=rectangular("(x,x^2)","Line_17");
+"Object_77"(hidden,color:blue),"Line_19"(hidden,color:blue)=rectangular("Cut_22","Line_18");
+"Cut_24"(hidden,color:blue),"Cut_23"(hidden,color:blue)=intersection("Circle_9","Line_19");
+"Line_20"(hidden,color:blue)=line("(x,x^2)","Cut_24");
+"F"(color:blue,showname,symbol:circle)=intersection("Line_9","Line_20");
+"Segment_3"(color:blue)=segment("(x,x^2)","F");
+"Cut_27"(hidden,color:pink)=intersection("Line_1","Line_17");
+"Circle_10"(hidden,color:pink)=circle("(x,x^2)","Cut_27");
+"Cut_29"(hidden,color:pink),"Cut_28"(color:pink)=intersection("Ray_1","Circle_10");
+"Cut_31"(hidden,color:pink),"Cut_30"(hidden,color:pink)=intersection("Line_17","Circle_10");
+"Angle_2"(color:pink)=angle("Cut_31","(x,x^2)","Cut_29");
+"Angle_3"(color:pink)=angle("F","(x,x^2)","Cut_30");

@@ -1,0 +1,36 @@
+window(-1,1,-1,1);
+/*
+Zwei Konstruktionen mit dem Zirkel allein.
+Solche Konstruktionen gehen auf Mascheroni zurÅck.
+
+Oben die Verdoppelung einer Strecke.
+
+
+Unten die Halbierung einer Strecke. Dabei wird die Strecke zunÑchst
+verdoppelt und dann die gezeigte Konstruktion durchgefÅhrt. Die
+Korrektheit beruht auf einer éhnlichkeit.
+*/
+"A"(showname)=point(-0.487342,0.613924);
+"B"(showname)=point(-0.335443,0.613924);
+"Kreis_1"()=circle("B","A");
+"Kreis_2"()=circle("A","B");
+"Schnitt_2"(hidden),"Schnitt_1"(hidden)=intersection("Kreis_1","Kreis_2");
+"Kreis_3"()=circle("Schnitt_1","B");
+"Schnitt_4"(hidden),"Schnitt_3"(hidden)=intersection("Kreis_3","Kreis_1");
+"Kreis_4"()=circle("Schnitt_4","Schnitt_1");
+"Schnitt_6"(hidden),"Schnitt_5"(symbol:circle)=intersection("Kreis_1","Kreis_4");
+"C"(showname)=point(-0.575949,-0.550633);
+"D"(showname)=point(-0.151899,-0.556962);
+"Kreis_13"(hidden,color:green)=circle("D","C");
+"Kreis_14"()=circle("C","D");
+"Schnitt_18"(hidden,color:green),"Schnitt_17"(hidden)=intersection("Kreis_13","Kreis_14");
+"Kreis_15"(hidden,color:green)=circle("Schnitt_17","D");
+"Schnitt_20"(hidden,color:green),"Schnitt_19"(hidden)=intersection("Kreis_15","Kreis_13");
+"Kreis_16"(hidden,color:green)=circle("Schnitt_20","Schnitt_17");
+"Schnitt_22"(hidden,color:green),"Schnitt_21"(color:green,symbol:circle)=intersection("Kreis_13","Kreis_16");
+"Kreis_17"()=circle("Schnitt_21","C");
+"Schnitt_24"(hidden),"Schnitt_23"(hidden)=intersection("Kreis_14","Kreis_17");
+"Kreis_18"()=circle("Schnitt_23","C");
+"Kreis_19"()=circle("Schnitt_24","C");
+"Schnitt_26"(hidden),"Schnitt_25"(symbol:circle)=intersection("Kreis_18","Kreis_19");
+

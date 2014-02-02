@@ -1,0 +1,14 @@
+N:Plumb line
+P:Line_1
+L:Choose a line object!
+T:line
+P:Point_1
+L:Choose a point!
+T:point
+S:"ObjPoint_1"(hidden)=pointon("Line_1",0.481795,0.140457);
+S:"Circle_1"(hidden)=circle("Point_1","ObjPoint_1");
+S:"Cut_2"(hidden),"Cut_1"(hidden)=intersection("Circle_1","Line_1");
+S:"Circle_2"(hidden)=circle("Cut_2","Point_1");
+S:"Circle_3"(hidden)=circle("Cut_1","Point_1");
+S:"Cut_4"(hidden),"Cut_3"(hidden)=intersection("Circle_2","Circle_3");
+S:"Line_2"()=line("Cut_3","Cut_4");

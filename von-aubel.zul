@@ -1,0 +1,77 @@
+window(-1,1,-1,1);
+/*
+Von Aubels Satz.
+
+
+Die gezeichneten Verbindungen der Mittelpunkte von Quadraten auf
+Seiten eines Vierecks sind immer gleich lang und stehen senkrecht
+aufeinander.
+
+
+Mit Hilfe von linearer Algebra (oder einfacher komplexen Zahlen)
+beweist man das leicht. Denn der Mittelpunkt des Quadrates auf
+ab ist
+
+
+m=(a+b+i(b-a))/2.
+*/
+"Punkt_1"()=point(-0.367089,-0.0759494);
+"Punkt_2"()=point(0.0886076,0.386076);
+"Punkt_3"()=point(0.158228,-0.234177);
+"Punkt_4"()=point(-0.0886076,-0.664557);
+"Strecke_1"()=segment("Punkt_1","Punkt_2");
+"Strecke_2"()=segment("Punkt_2","Punkt_3");
+"Strecke_3"()=segment("Punkt_3","Punkt_4");
+"Strecke_4"()=segment("Punkt_4","Punkt_1");
+"Objekt_57"(hidden,color:green),"Gerade_10"(hidden,color:green)=rectangular("Punkt_3","Strecke_2");
+"Kreis_4"(hidden,color:green)=circle("Punkt_3","Punkt_2");
+"Schnitt_14"(hidden,color:green),"Schnitt_13"(hidden,color:green)=intersection("Gerade_10","Kreis_4");
+"Objekt_62"(hidden,color:green),"Gerade_11"(hidden,color:green)=rectangular("Schnitt_14","Gerade_10");
+"Objekt_64"(hidden,color:green),"Gerade_12"(hidden,color:green)=rectangular("Punkt_2","Strecke_2");
+"Schnitt_15"(hidden,color:green)=intersection("Gerade_12","Gerade_11");
+"Strecke_20"(color:green)=segment("Punkt_2","Schnitt_15");
+"Strecke_21"(color:green)=segment("Schnitt_15","Schnitt_14");
+"Strecke_22"(color:green)=segment("Schnitt_14","Punkt_3");
+"Strecke_23"(hidden,color:green)=segment("Punkt_3","Schnitt_15");
+"Strecke_24"(hidden,color:green)=segment("Punkt_2","Schnitt_14");
+"Schnitt_16"(color:green,symbol:circle)=intersection("Strecke_23","Strecke_24");
+"Objekt_73"(hidden,color:green),"Gerade_13"(hidden,color:green)=rectangular("Punkt_2","Strecke_1");
+"Kreis_5"(hidden,color:green)=circle("Punkt_2","Punkt_1");
+"Schnitt_18"(hidden,color:green),"Schnitt_17"(hidden,color:green)=intersection("Gerade_13","Kreis_5");
+"Objekt_78"(hidden,color:green),"Gerade_14"(hidden,color:green)=rectangular("Schnitt_18","Gerade_13");
+"Objekt_80"(hidden,color:green),"Gerade_15"(hidden,color:green)=rectangular("Punkt_1","Strecke_1");
+"Schnitt_19"(hidden,color:green)=intersection("Gerade_15","Gerade_14");
+"Strecke_25"(color:green)=segment("Punkt_1","Schnitt_19");
+"Strecke_26"(color:green)=segment("Schnitt_19","Schnitt_18");
+"Strecke_27"(color:green)=segment("Schnitt_18","Punkt_2");
+"Strecke_28"(hidden,color:green)=segment("Punkt_2","Schnitt_19");
+"Strecke_29"(hidden,color:green)=segment("Punkt_1","Schnitt_18");
+"Schnitt_20"(color:green,symbol:circle)=intersection("Strecke_28","Strecke_29");
+"Objekt_89"(hidden,color:green),"Gerade_16"(hidden,color:green)=rectangular("Punkt_1","Strecke_4");
+"Kreis_6"(hidden,color:green)=circle("Punkt_1","Punkt_4");
+"Schnitt_22"(hidden,color:green),"Schnitt_21"(hidden,color:green)=intersection("Gerade_16","Kreis_6");
+"Objekt_94"(hidden,color:green),"Gerade_17"(hidden,color:green)=rectangular("Schnitt_22","Gerade_16");
+"Objekt_96"(hidden,color:green),"Gerade_18"(hidden,color:green)=rectangular("Punkt_4","Strecke_4");
+"Schnitt_23"(hidden,color:green)=intersection("Gerade_18","Gerade_17");
+"Strecke_30"(color:green)=segment("Punkt_4","Schnitt_23");
+"Strecke_31"(color:green)=segment("Schnitt_23","Schnitt_22");
+"Strecke_32"(color:green)=segment("Schnitt_22","Punkt_1");
+"Strecke_33"(hidden,color:green)=segment("Punkt_1","Schnitt_23");
+"Strecke_34"(hidden,color:green)=segment("Punkt_4","Schnitt_22");
+"Schnitt_24"(color:green,symbol:circle)=intersection("Strecke_33","Strecke_34");
+"Objekt_105"(hidden,color:green),"Gerade_19"(hidden,color:green)=rectangular("Punkt_4","Strecke_3");
+"Kreis_7"(hidden,color:green)=circle("Punkt_4","Punkt_3");
+"Schnitt_26"(hidden,color:green),"Schnitt_25"(hidden,color:green)=intersection("Gerade_19","Kreis_7");
+"Objekt_110"(hidden,color:green),"Gerade_20"(hidden,color:green)=rectangular("Schnitt_26","Gerade_19");
+"Objekt_112"(hidden,color:green),"Gerade_21"(hidden,color:green)=rectangular("Punkt_3","Strecke_3");
+"Schnitt_27"(hidden,color:green)=intersection("Gerade_21","Gerade_20");
+"Strecke_35"(color:green)=segment("Punkt_3","Schnitt_27");
+"Strecke_36"(color:green)=segment("Schnitt_27","Schnitt_26");
+"Strecke_37"(color:green)=segment("Schnitt_26","Punkt_4");
+"Strecke_38"(hidden,color:green)=segment("Punkt_4","Schnitt_27");
+"Strecke_39"(hidden,color:green)=segment("Punkt_3","Schnitt_26");
+"Schnitt_28"(color:green,symbol:circle)=intersection("Strecke_38","Strecke_39");
+"Strecke_40"(color:cyan)=segment("Schnitt_28","Schnitt_20");
+"Strecke_41"(color:cyan)=segment("Schnitt_24","Schnitt_16");
+"Schnitt_29"(color:cyan,symbol:circle)=intersection("Strecke_41","Strecke_40");
+"Winkel_1"(color:cyan)=angle("Schnitt_28","Schnitt_29","Schnitt_16");

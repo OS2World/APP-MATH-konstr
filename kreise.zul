@@ -1,0 +1,25 @@
+window(-0.99,1.0225,-1.00625,1.00625);
+/*
+Ein Kreis durch drei Punkte wird konstruiert.
+*/
+Punkt_1(color:green)=point(-0.676892,-0.0245399);
+Punkt_2(color:green)=point(0.00996094,-0.427656);
+Punkt_3(color:green)=point(0.318125,0.578594);
+Kreis_1(hidden,color:pink)=circle(Punkt_2,Punkt_3);
+Kreis_2(hidden,color:pink)=circle(Punkt_3,Punkt_2);
+Schnitt_1(hidden,color:pink),Schnitt_2(hidden,color:pink)=intersection(Kreis_1,Kreis_2);
+Gerade_1(color:pink)=line(Schnitt_2,Schnitt_1);
+Strecke_1(color:pink)=segment(Punkt_2,Punkt_3);
+Strecke_2(color:green)=segment(Punkt_3,Punkt_1);
+Strecke_3(color:brown)=segment(Punkt_1,Punkt_2);
+Kreis_3(hidden,color:green)=circle(Punkt_1,Punkt_3);
+Kreis_4(hidden,color:green)=circle(Punkt_3,Punkt_1);
+Schnitt_3(hidden,color:green),Schnitt_4(hidden,color:green)=intersection(Kreis_3,Kreis_4);
+Gerade_5(color:green)=line(Schnitt_3,Schnitt_4);
+Schnitt_5(hidden,color:green)=intersection(Gerade_5,Gerade_1);
+Kreis_5(color:green)=circle(Schnitt_5,Punkt_3);
+Kreis_20(hidden,color:brown)=circle(Punkt_2,Punkt_1);
+Kreis_21(hidden,color:brown)=circle(Punkt_1,Punkt_2);
+Schnitt_30(hidden,color:brown),Schnitt_31(hidden,color:brown)=intersection(Kreis_20,Kreis_21);
+Gerade_37(color:brown)=line(Schnitt_31,Schnitt_30);
+Cut_8(hidden)=intersection(Gerade_1,Strecke_1);

@@ -1,0 +1,67 @@
+window(-1,1,-1,1);
+/*
+Spiegelung einer Geraden an einem Kreis mit dem Zirkel allein.
+
+
+Diese Konstruktion wurde mit dem Zirkel allein durchgefÅhrt. Die
+Gerade g ist nur vorhanden, um den Effekt zu zeigen. Es wurden
+zunÑchst Thaleskreise Åber MP und MQ konstruiert, um den Lotpunkt
+L der Geraden zu ermitteln. Danach wurde L in den Kreis nach L'
+gespiegelt und der Thaleskreis Åber ML' konstruiert. Dies ist
+der gesuchte Kreis.
+
+
+Mit Hilfe dieser Konstruktion kann man zwei durch zwei Punkte
+gegebene Geraden allein mit dem Zirkel schneiden.
+*/
+Punkt_1(symbol:point)=point(-0.605985,-0.216958);
+Punkt_2(symbol:point)=point(-0.790524,0.206983);
+Kreis_1()=circle(Punkt_1,Punkt_2);
+P(showname)=point(0.0189873,-0.291139);
+Q(showname)=point(-0.15212,0.501247);
+Kreis_2(hidden,color:brown)=circle(Punkt_1,P);
+Kreis_3(hidden,color:brown)=circle(P,Punkt_1);
+Schnitt_2(hidden,color:brown),Schnitt_1(hidden,color:brown)=intersection(Kreis_3,Kreis_2);
+Kreis_4(hidden,color:brown)=circle(Schnitt_1,P);
+Schnitt_4(hidden,color:brown),Schnitt_3(hidden,color:brown)=intersection(Kreis_3,Kreis_4);
+Kreis_5(hidden,color:brown)=circle(Schnitt_3,Schnitt_1);
+Schnitt_6(hidden,color:brown),Schnitt_5(hidden,color:brown)=intersection(Kreis_3,Kreis_5);
+Kreis_6(hidden,color:brown)=circle(Schnitt_5,Punkt_1);
+Schnitt_8(hidden,color:brown),Schnitt_7(hidden,color:brown)=intersection(Kreis_2,Kreis_6);
+Kreis_7(hidden,color:brown)=circle(Schnitt_8,Punkt_1);
+Kreis_8(hidden,color:brown)=circle(Schnitt_7,Punkt_1);
+Schnitt_10(hidden,color:brown),Schnitt_9(hidden,color:brown)=intersection(Kreis_7,Kreis_8);
+Kreis_9(hidden,color:blue)=circle(Schnitt_10,P);
+Kreis_10(hidden,color:cyan)=circle(Q,Punkt_1);
+Kreis_11(hidden,color:cyan)=circle(Punkt_1,Q);
+Schnitt_12(hidden,color:cyan),Schnitt_11(hidden,color:cyan)=intersection(Kreis_10,Kreis_11);
+Kreis_12(hidden,color:cyan)=circle(Schnitt_12,Q);
+Schnitt_14(hidden,color:cyan),Schnitt_13(hidden,color:cyan)=intersection(Kreis_10,Kreis_12);
+Kreis_13(hidden,color:cyan)=circle(Schnitt_14,Q);
+Schnitt_16(hidden,color:cyan),Schnitt_15(hidden,color:cyan)=intersection(Kreis_10,Kreis_13);
+Kreis_14(hidden,color:cyan)=circle(Schnitt_16,Punkt_1);
+Schnitt_18(hidden,color:cyan),Schnitt_17(hidden,color:cyan)=intersection(Kreis_11,Kreis_14);
+Kreis_15(hidden,color:cyan)=circle(Schnitt_18,Punkt_1);
+Kreis_16(hidden,color:cyan)=circle(Schnitt_17,Punkt_1);
+Schnitt_20(hidden,color:cyan),Schnitt_19(hidden,color:cyan)=intersection(Kreis_16,Kreis_15);
+Kreis_17(hidden,color:blue)=circle(Schnitt_19,Q);
+L(hidden,color:blue,showname),Schnitt_21(hidden,color:cyan)=intersection(Kreis_9,Kreis_17);
+Kreis_18(hidden,color:green)=circle(L,Punkt_1);
+Schnitt_24(hidden,color:green),Schnitt_23(hidden,color:green)=intersection(Kreis_1,Kreis_18);
+Kreis_19(hidden,color:green)=circle(Schnitt_24,Punkt_1);
+Kreis_20(hidden,color:green)=circle(Schnitt_23,Punkt_1);
+L'(hidden,color:green,showname),Schnitt_25(hidden,color:green)=intersection(Kreis_19,Kreis_20);
+Kreis_21(hidden,color:green)=circle(Punkt_1,L');
+Kreis_22(hidden,color:green)=circle(L',Punkt_1);
+Schnitt_28(hidden,color:green),Schnitt_27(hidden,color:green)=intersection(Kreis_21,Kreis_22);
+Kreis_23(hidden,color:green)=circle(Schnitt_28,L');
+Schnitt_30(hidden,color:green),Schnitt_29(hidden,color:green)=intersection(Kreis_22,Kreis_23);
+Kreis_24(hidden,color:green)=circle(Schnitt_29,L');
+Schnitt_32(hidden,color:green),Schnitt_31(hidden,color:green)=intersection(Kreis_22,Kreis_24);
+Kreis_25(hidden,color:green)=circle(Schnitt_31,Punkt_1);
+Schnitt_34(hidden,color:green),Schnitt_33(hidden,color:green)=intersection(Kreis_21,Kreis_25);
+Kreis_26(hidden,color:green)=circle(Schnitt_34,Punkt_1);
+Kreis_27(hidden,color:green)=circle(Schnitt_33,Punkt_1);
+Schnitt_36(hidden,color:green),Schnitt_35(hidden,color:green)=intersection(Kreis_26,Kreis_27);
+k(color:green,showname)=circle(Schnitt_36,Punkt_1);
+g(showname)=line(P,Q);

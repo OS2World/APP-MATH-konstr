@@ -1,0 +1,43 @@
+window(-1,1,-1,1);
+/*
+The Pythagoras.
+
+
+This construction can be used to proof the Pythagoras theorem.
+From the figure, we get by comparing the areas
+
+	(a+b)^2=2ab+c^2,
+
+which transforms to
+
+	a^2+b^2=c^2.
+
+
+Move X to see the correctness of this reasoning.
+*/
+Point_141()=point(-0.509537,-0.356948);
+Point_142()=point(0.362398,-0.356948);
+Segment_47()=segment(Point_141,Point_142);
+Point_143(hidden),Line_79(hidden)=rectangular(Point_141,Segment_47);
+Point_144(hidden),Line_80(hidden)=rectangular(Point_142,Segment_47);
+Circle_57(hidden)=circle(Point_142,Point_141);
+Cut_78(hidden),Cut_79()=intersection(Line_80,Circle_57);
+Point_147(hidden),Line_81(hidden)=parallel(Cut_79,Segment_47);
+Cut_80()=intersection(Line_79,Line_81);
+Segment_48()=segment(Point_141,Cut_80);
+Segment_49()=segment(Cut_80,Cut_79);
+Segment_50()=segment(Cut_79,Point_142);
+X(showname)=pointon(Segment_47,0.0344828,-0.356948);
+Point_150(hidden),Circle_58(hidden)=circle3(Cut_79,Point_142,X);
+Point_151(hidden),Circle_59(hidden)=circle3(Cut_80,Point_142,X);
+Cut_81(),Cut_82(hidden)=intersection(Circle_59,Segment_49);
+Cut_83(),Cut_84(hidden)=intersection(Circle_58,Segment_50);
+Segment_51()=segment(X,Cut_83);
+Segment_52()=segment(Cut_83,Cut_81);
+Point_156(hidden),Line_87(hidden)=parallel(Cut_81,Segment_51);
+Cut_85()=intersection(Segment_48,Line_87);
+Segment_53()=segment(Cut_81,Cut_85);
+Segment_54()=segment(Cut_85,X);
+a(color:green,showname)=segment(Point_141,X);
+b(color:green,showname)=segment(Point_141,Cut_85);
+c(color:green,showname)=segment(Cut_85,X);

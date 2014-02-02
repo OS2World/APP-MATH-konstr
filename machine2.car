@@ -1,0 +1,21 @@
+window(-1,1,-1,1);
+/*
+A hinge machine.
+
+
+Move P and watch Q.
+*/
+Punkt_1(color:pink,symbol:circle)=point(0.775051,-0.224949);
+Punkt_2(color:pink,symbol:circle)=point(0.82716,0.31358);
+Strecke_1(color:pink)=segment(Punkt_2,Punkt_1);
+Punkt_3(color:pink,symbol:circle)=point(0.219753,0.466667);
+Strecke_2(color:pink)=segment(Punkt_3,Punkt_2);
+Punkt_4(symbol:circle)=point(0.194274,-0.274029);
+Punkt_6(hidden),Kreis_1(hidden)=circle3(Punkt_4,Punkt_1,Punkt_2);
+P(showname,symbol:circle)=pointon(Kreis_1,-0.000360629,0.230794);
+Strecke_3(color:green)=segment(Punkt_4,P);
+X()=point(-0.244444,0.190123);
+Strahl_1(hidden)=ray(P,X);
+Punkt_9(hidden),Kreis_2(hidden)=circle3(P,Punkt_2,Punkt_3);
+Q(showname,symbol:circle),Schnitt_2(hidden)=intersection(Strahl_1,Kreis_2);
+Strecke_29(color:green)=segment(P,Q);

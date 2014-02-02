@@ -1,0 +1,27 @@
+window(-1,1,-1,1);
+/*
+Pitch Cheneys Lîsung fÅr ein Problem von Mascheroni (genannt Napoleons
+Problem) mit nur fÅnf Kreisen.
+
+
+Das Problem besteht darin, einem Kreis, der durch Mittelpunkt
+und Radius gegeben ist, ein Quadrat mit dem Zirkel allein einzubeschreiben.
+*/
+"Punkt_1"()=point(-0.221519,0.21519);
+"Punkt_2"()=point(0.196203,0.392405);
+"Kreis_1"()=circle("Punkt_1","Punkt_2");
+"Kreis_4"(hidden,color:green)=circle("Punkt_2","Punkt_1");
+"Schnitt_8"(color:green),"Schnitt_7"(hidden,color:green)=intersection("Kreis_1","Kreis_4");
+"Kreis_5"(hidden,color:green)=circle("Schnitt_8","Punkt_1");
+"Schnitt_10"(hidden,color:green),"Schnitt_9"(hidden,color:green)=intersection("Kreis_1","Kreis_5");
+"Kreis_6"(hidden,color:green)=circle("Schnitt_10","Punkt_2");
+"Schnitt_12"(color:green),"Schnitt_11"(hidden,color:green)=intersection("Kreis_1","Kreis_6");
+"Schnitt_14"(hidden,color:green),"Schnitt_13"(hidden,color:green)=intersection("Kreis_4","Kreis_5");
+"Kreis_7"(hidden,color:green)=circle("Schnitt_13","Punkt_1");
+"Schnitt_16"(hidden,color:green),"Schnitt_15"(hidden,color:green)=intersection("Kreis_6","Kreis_7");
+"Kreis_8"(hidden,color:green)=circle("Schnitt_8","Schnitt_15");
+"Schnitt_18"(color:pink),"Schnitt_17"(color:pink)=intersection("Kreis_1","Kreis_8");
+"Strecke_1"(color:pink)=segment("Schnitt_12","Schnitt_17");
+"Strecke_2"(color:pink)=segment("Schnitt_17","Schnitt_8");
+"Strecke_3"(color:pink)=segment("Schnitt_8","Schnitt_18");
+"Strecke_4"(color:pink)=segment("Schnitt_18","Schnitt_12");

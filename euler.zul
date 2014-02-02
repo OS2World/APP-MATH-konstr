@@ -1,0 +1,41 @@
+window(-1,1,-1,1);
+/*
+Die Eulersche Gerade.
+
+
+Diese Figur zeigt, wie der Umkreimittelpunkt U (Schnittpunkt der
+Mittelsenkrechten), der Schwerpunkt S (Schnittpunkt der Seitenahlbierenden)
+und der H”henschnittpunkt immer auf einer Geraden liegen.
+
+
+Bewegen Sie die Ecken des Dreiecks, um die Figur zu beobachten.
+*/
+Punkt_23()=point(0.179221,0.428571);
+Punkt_24()=point(-0.678846,-0.319525);
+Punkt_25()=point(0.384164,-0.331378);
+Strecke_4()=segment(Punkt_24,Punkt_23);
+Strecke_5()=segment(Punkt_23,Punkt_25);
+Strecke_6()=segment(Punkt_25,Punkt_24);
+Kreis_9(hidden,color:blue)=circle(Punkt_24,Punkt_25);
+Kreis_10(hidden,color:blue)=circle(Punkt_25,Punkt_24);
+Schnitt_12(hidden,color:blue),Schnitt_13(hidden,color:blue)=intersection(Kreis_9,Kreis_10);
+Gerade_16(hidden,color:blue)=line(Schnitt_13,Schnitt_12);
+Kreis_11(hidden,color:blue)=circle(Punkt_24,Punkt_23);
+Kreis_12(hidden,color:blue)=circle(Punkt_23,Punkt_24);
+Schnitt_14(hidden,color:blue),Schnitt_15(hidden,color:blue)=intersection(Kreis_12,Kreis_11);
+Gerade_17(hidden,color:blue)=line(Schnitt_15,Schnitt_14);
+U(color:blue,showname,symbol:circle)=intersection(Gerade_16,Gerade_17);
+Kreis_13(color:blue)=circle(U,Punkt_24);
+Punkt_31(hidden,color:pink),Gerade_18(hidden,color:pink)=rectangular(Punkt_23,Strecke_6);
+Punkt_32(hidden,color:pink),Gerade_19(hidden,color:pink)=rectangular(Punkt_24,Strecke_5);
+H(color:pink,showname,symbol:circle)=intersection(Gerade_18,Gerade_19);
+Schnitt_18(hidden,color:pink)=intersection(Strecke_6,Gerade_18);
+Strecke_7(color:pink)=segment(Punkt_23,Schnitt_18);
+Schnitt_19(hidden,color:pink)=intersection(Gerade_19,Strecke_5);
+Strecke_8(color:pink)=segment(Punkt_24,Schnitt_19);
+Schnitt_20(hidden,color:green)=intersection(Strecke_6,Gerade_16);
+Strecke_9(color:green)=segment(Punkt_23,Schnitt_20);
+Schnitt_21(hidden,color:green)=intersection(Strecke_4,Gerade_17);
+Strecke_10(color:green)=segment(Punkt_25,Schnitt_21);
+S(color:green,showname,symbol:circle)=intersection(Strecke_9,Strecke_10);
+Strecke_11()=segment(H,U);

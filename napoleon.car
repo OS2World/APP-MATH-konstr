@@ -1,0 +1,37 @@
+window(-1,1,-1,1);
+/*
+Napoleon's construction.
+
+
+This construction finds the center of a circle using a circle
+only. It depends on the equal lengths of certain line segments,
+as can be seen in the figure.
+
+
+Actually, every construction with compasses and ruler can be done
+with compasses alone.
+
+
+The construction is probably due to Pascal.
+*/
+Punkt_1(hidden)=point(-0.140665,-0.138107);
+Punkt_2(hidden)=point(-0.601023,0.393862);
+Kreis_1()=circle(Punkt_1,Punkt_2);
+A(color:pink,showname)=pointon(Kreis_1,0.0543193,0.537838);
+B(color:pink,showname)=pointon(Kreis_1,0.444079,0.253038);
+Kreis_2(hidden,color:green)=circle(A,B);
+Schnitt_1(hidden,color:green),Schnitt_2(hidden,color:green)=intersection(Kreis_2,Kreis_1);
+Kreis_3(hidden,color:green)=circle(Schnitt_2,A);
+Kreis_4(hidden,color:green)=circle(Schnitt_1,A);
+Schnitt_3(hidden,color:green),Schnitt_4(color:green)=intersection(Kreis_3,Kreis_4);
+Kreis_5(hidden,color:green)=circle(Schnitt_4,A);
+Schnitt_5(hidden,color:green),Schnitt_6(color:green)=intersection(Kreis_2,Kreis_5);
+Kreis_6(hidden,color:green)=circle(Schnitt_5,A);
+Kreis_8(hidden,color:green)=circle(Schnitt_6,A);
+Schnitt_7(hidden,color:green),M(color:green,showname)=intersection(Kreis_8,Kreis_6);
+Strecke_2(color:brown)=segment(A,B);
+Strecke_3(color:brown)=segment(Schnitt_4,B);
+Strecke_4(color:green)=segment(A,Schnitt_6);
+Strecke_5(color:green)=segment(Schnitt_6,M);
+a(color:blue)=segment(Schnitt_4,Schnitt_6);
+b(color:blue)=segment(Schnitt_4,A);

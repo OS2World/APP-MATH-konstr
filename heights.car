@@ -1,0 +1,28 @@
+window(-1,1,-1,1);
+/*
+The intersection of the heights.
+
+
+The heights of a triangle are the plumb lines from the corners
+to the opposite sides. These lines intersect in a single point.
+The proof can be seen in this construction. For the heights become
+perpendiculars through the midpoints of the sides in a certain
+larger triangle.
+
+
+*/
+Punkt_1()=point(-0.243354,0.220859);
+Punkt_2()=point(-0.243354,-0.269939);
+Punkt_3()=point(0.267399,-0.0549451);
+Strecke_1()=segment(Punkt_1,Punkt_2);
+Strecke_2()=segment(Punkt_2,Punkt_3);
+Strecke_3()=segment(Punkt_3,Punkt_1);
+Punkt_4(hidden),Gerade_4()=rectangular(Punkt_2,Strecke_3);
+Punkt_5(hidden),Gerade_5()=rectangular(Punkt_1,Strecke_2);
+Punkt_6(hidden),Gerade_6()=rectangular(Punkt_3,Strecke_1);
+Punkt_40(hidden,color:green),Gerade_29(color:green)=parallel(Punkt_2,Strecke_3);
+Punkt_41(hidden,color:green),Gerade_30(color:green)=parallel(Punkt_3,Strecke_1);
+Punkt_42(hidden,color:green),Gerade_31(color:green)=parallel(Punkt_1,Strecke_2);
+Schnitt_23(color:green)=intersection(Gerade_6,Gerade_5);
+Schnitt_24(hidden,color:green)=intersection(Gerade_30,Gerade_29);
+Kreis_14(color:green)=circle(Schnitt_23,Schnitt_24);

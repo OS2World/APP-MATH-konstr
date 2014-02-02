@@ -1,0 +1,42 @@
+N:Circle with 3 points
+P:Point_3
+L:Midpoint!
+T:point
+P:Point_1
+L:First radius point!
+T:point
+P:Point_2
+L:Second radius point!
+T:point
+S:"Line_1"(hidden)=line("Point_1","Point_2");
+S:"Line_2"(hidden)=line("Point_1","Point_3");
+S:"ObjPoint_1"(hidden)=pointon("Line_2",-0.637,-0.3185);
+S:"Circle_1"(hidden)=circle("Point_2","ObjPoint_1");
+S:"Cut_2"(hidden),"Cut_1"(hidden)=intersection("Circle_1","Line_2");
+S:"Circle_2"(hidden)=circle("Cut_2","Point_2");
+S:"Circle_3"(hidden)=circle("Cut_1","Point_2");
+S:"Cut_4"(hidden),"Cut_3"(hidden)=intersection("Circle_2","Circle_3");
+S:"Line_3"(hidden)=line("Cut_3","Cut_4");
+S:"Cut_5"(hidden)=intersection("Line_2","Line_3");
+S:"Circle_4"(hidden)=circle("Point_2","Cut_5");
+S:"Cut_7"(hidden),"Cut_6"(hidden)=intersection("Circle_4","Line_3");
+S:"Circle_5"(hidden)=circle("Cut_6","Cut_7");
+S:"Circle_6"(hidden)=circle("Cut_7","Cut_6");
+S:"Cut_9"(hidden),"Cut_8"(hidden)=intersection("Circle_6","Circle_5");
+S:"Line_4"(hidden)=line("Cut_9","Cut_8");
+S:"ObjPoint_2"(hidden)=pointon("Line_1",0.567122,-0.209034);
+S:"Circle_7"(hidden)=circle("Point_3","ObjPoint_2");
+S:"Cut_11"(hidden),"Cut_10"(hidden)=intersection("Circle_7","Line_1");
+S:"Circle_8"(hidden)=circle("Cut_11","Point_3");
+S:"Circle_9"(hidden)=circle("Cut_10","Point_3");
+S:"Cut_13"(hidden),"Cut_12"(hidden)=intersection("Circle_8","Circle_9");
+S:"Line_5"(hidden)=line("Cut_12","Cut_13");
+S:"Cut_14"(hidden)=intersection("Line_1","Line_5");
+S:"Circle_10"(hidden)=circle("Point_3","Cut_14");
+S:"Cut_16"(hidden),"Cut_15"(hidden)=intersection("Circle_10","Line_5");
+S:"Circle_11"(hidden)=circle("Cut_15","Cut_16");
+S:"Circle_12"(hidden)=circle("Cut_16","Cut_15");
+S:"Cut_18"(hidden),"Cut_17"(hidden)=intersection("Circle_12","Circle_11");
+S:"Object_41"(hidden)=line("Cut_18","Cut_17");
+S:"Cut_19"(hidden)=intersection("Line_4","Object_41");
+S:"Circle_13"()=circle("Point_3","Cut_19");
